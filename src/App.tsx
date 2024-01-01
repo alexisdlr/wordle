@@ -1,7 +1,14 @@
 import { useEffect } from "react";
-import { useTimer } from 'react-timer-hook';
-import toast, { Toaster } from "react-hot-toast";
-import { GameStartModal, Header, GridSection, Keyboard } from "./components";
+import { useTimer } from "react-timer-hook";
+import toast from "react-hot-toast";
+import {
+  GameStartModal,
+  Header,
+  GridSection,
+  Keyboard,
+  ToasterProvider,
+  StatisticsModal,
+} from "./components";
 import { useRootDispatch, useRootSelector } from "./hooks";
 import { cn, getRandom } from "./lib/utils";
 import { getDictionary } from "./lib/dictionary";
@@ -51,9 +58,8 @@ function App() {
         <Keyboard />
       </div>
       <GameStartModal />
-      <div>
-        <Toaster />
-      </div>
+      <StatisticsModal minutes={minutes} seconds={seconds} />
+      <ToasterProvider />
     </div>
   );
 }

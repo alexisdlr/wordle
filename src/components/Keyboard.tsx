@@ -28,7 +28,6 @@ const Keyboard = () => {
         toast.error("La palabra no pertenece al alfabeto");
         return;
       }
-      console.log(currentWord.length)
       if (event.key === "CapsLock") return;
       if (event.key === "Shift") return;
       if (event.key === "Tab") return;
@@ -73,7 +72,7 @@ const Keyboard = () => {
           dispatch(submitWord());
           return;
         }
-        toast.error("palabra no encontrada en el diccionario");
+        toast.error("Palabra no encontrada en el diccionario");
         return;
       }
 
