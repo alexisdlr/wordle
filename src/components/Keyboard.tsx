@@ -28,9 +28,15 @@ const Keyboard = () => {
         toast.error("La palabra no pertenece al alfabeto");
         return;
       }
-      if (event.key === "CapsLock") return;
-      if (event.key === "Shift") return;
-      if (event.key === "Tab") return;
+      if (
+        event.key === "CapsLock" ||
+        event.key === "Delete" ||
+        event.key === "Shift" ||
+        event.key.startsWith('A', 0) ||
+        event.key === "Tab"
+      )
+        return;
+
       if (event.key === "Enter") {
         if (currentWord.length === 5) {
           const dictionary = await getDictionary();
